@@ -4,6 +4,7 @@ from langchain_core.runnables import RunnableParallel, RunnablePassthrough, Runn
 from langchain_core.output_parsers import StrOutputParser
 from operator import itemgetter
 from vector_store import VectorStoreManager
+from llm import get_llm
 
 def main():
     # Load the API key from environment variables
@@ -15,11 +16,11 @@ def main():
     vector_index = vector_store_manager.get_vector_index(documents)
 
     # Initialize the LLM (Large Language Model) and retriever
-    llm = YourLLMClass(api_key=api_key)
+    llm = get_llm(api_key)
     retriever =YourRetrieverClass(vector_index=vector_index)
 
     # Set up the prompt template
-    prompt_template = "Your prompt template here, with placeholders if necessary."
+    prompt_template = get_prompt_template()
     # Initialize the chat history
     chat_history = []
 
