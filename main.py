@@ -49,8 +49,8 @@ def main():
         chat_history.save_interaction(query, result['answer'])
 
         # Add the new interaction to the display history (without labels)
-        history.append((f'<div style="text-align: right; background-color: transparent !important; border: none !important;"><strong style="color: #eee;">상담자</strong><br><span style="background-color: #DCF8C6; color: black; padding: 8px 12px; border-radius: 10px; display: inline-block;">{query}</span></div>', None))
-        history.append((None, f'<div style="text-align: left; background-color: transparent !important; border: none !important;"><strong style="color: #eee;">오은영 박사</strong><br><span style="background-color: #FFFFFF; color: black; padding: 8px 12px; border-radius: 10px; display: inline-block;">{result["answer"]}</span></div>'))
+        history.append((f'<div style="text-align: right;"><strong style="color: #eee;">상담자</strong><br><span style="background-color: #DCF8C6; color: black; padding: 8px 12px; border-radius: 10px; display: inline-block;">{query}</span></div>', None))
+        history.append((None, f'<div style="text-align: left;"><strong style="color: #eee;">오은영 박사</strong><br><span style="background-color: #FFFFFF; color: black; padding: 8px 12px; border-radius: 10px; display: inline-block;">{result["answer"]}</span></div>'))
 
         return "", history
 
