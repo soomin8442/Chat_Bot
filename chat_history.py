@@ -1,7 +1,7 @@
 from langchain.memory import ConversationBufferWindowMemory
 
 class ChatHistory:
-    def __init__(self, k=10):
+    def __init__(self, k=20):
         self.memory = ConversationBufferWindowMemory(k=k)
 
     def save_interaction(self, query, answer):
